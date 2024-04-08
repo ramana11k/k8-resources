@@ -7,5 +7,5 @@ spec:
   containers:
     - name: hello-pod
       image: nginx
-      port:
+      ports:
         - containerPort: 80
