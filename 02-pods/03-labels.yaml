@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: label-demo
+  labels:
+    course: Devops
+    trainer: ShivaKumar  # if space, should be in double cotes
+spec:
+# list of containers
+  containers:
+    - name: hello-pod
+      image: nginx # it is a public image, so k8 pulling it from docker hub
+      ports:
+        - containerPort: 80
