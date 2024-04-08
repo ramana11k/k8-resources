@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: environment
+  labels:
+    purpose: Demonstate-environment    
+spec:
+  containers:
+    - name: env-container
+      image: nginx # it is a public image, so k8 pulling it from docker hub
+      env:
+        - name: DEMO_GREETING
+          value: "Hello environment"
+        - name: DEMO_FAREWELL
+          value: "Byeee environment"
