@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: hello-pod 
+  name: hello-pod
 spec:
 # list of containers
   containers:
@@ -9,3 +9,17 @@ spec:
       image: nginx # it is a public image, so k8 pulling it from docker hub
       ports:
         - containerPort: 80
+
+
+# apiVersion: v1
+# kind: Pod
+# metadata:
+#   name: hello-pod
+#   namespace: roboshop
+# spec:
+# # list of containers
+#   containers:
+#     - name: hello-pod
+#       image: nginx # it is a public image, so k8 pulling it from docker hub
+#       ports:
+#         - containerPort: 80
