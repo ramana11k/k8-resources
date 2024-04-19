@@ -50,12 +50,12 @@ spec:
         image: nginx
         volumeMounts:
         - name: nginx-logs
-          mountPath: /var/logs/nginx #nginx will mount the logs in this location
-      - name: filebeat-sidecar
+          mountPath: /var/log/nginx #nginx will mount the logs in this location
+      - name: filebeat-sidecar # creating sidecar container
         image: docker.elastic.co/beats/filebeat:7.17.3
         volumeMounts:
         - name: nginx-logs
-          mountPath: /var/logs/nginx #nginx will mount the logs in this location
+          mountPath: /var/log/nginx #nginx will mount the logs in this location
         - name: filebeat-config
           mountPath: /usr/share/filebeat/filebeat.yml
           subPath: filebeat.yml          
