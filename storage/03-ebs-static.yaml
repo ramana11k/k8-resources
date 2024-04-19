@@ -46,7 +46,7 @@ spec:
   volumes:
   - name: nginx-data
     persistentVolumeClaim:
-      claimName: ebs-claim
+      claimName: ebs-static
 
 
 ---
