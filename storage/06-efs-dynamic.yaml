@@ -13,7 +13,6 @@ spec:
 
 ---
 
-
 apiVersion: v1
 kind: Pod
 metadata:
@@ -27,14 +26,13 @@ spec:
     volumeMounts:
     - name: nginx-data
       mountPath: /usr/share/nginx/html
-  nodeSelector:
-    zone: 1b
  
   volumes:
   - name: nginx-data
     persistentVolumeClaim:
       claimName: efs-dynamic
 
+---
 
 # apiVersion: apps/v1
 # kind: Deployment
