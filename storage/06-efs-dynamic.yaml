@@ -13,59 +13,59 @@ spec:
 
 ---
 
-apiVersion: v1
-kind: Pod
-metadata:
-  name: efs-dynamic
-  labels:
-    demo: efs-dynamic
-spec:
-  containers:
-  - name: nginx
-    image: nginx
-    volumeMounts:
-    - name: nginx-data
-      mountPath: /usr/share/nginx/html
+# apiVersion: v1
+# kind: Pod
+# metadata:
+#   name: efs-dynamic
+#   labels:
+#     demo: efs-dynamic
+# spec:
+#   containers:
+#   - name: nginx
+#     image: nginx
+#     volumeMounts:
+#     - name: nginx-data
+#       mountPath: /usr/share/nginx/html
  
-  volumes:
-  - name: nginx-data
-    persistentVolumeClaim:
-      claimName: efs-dynamic
+#   volumes:
+#   - name: nginx-data
+#     persistentVolumeClaim:
+#       claimName: efs-dynamic
 
 ---
 
-# apiVersion: apps/v1
-# kind: Deployment
-# metadata:
-#   name: nginx-deployment
-#   labels:
-#     app: nginx
-#     demo: efs-dynamic
-# spec:
-#   # modify replicas according to your case
-#   replicas: 3
-#   selector:
-#     matchLabels:
-#       app: nginx
-#       demo: efs-dynamic
-#   template:
-#     metadata:
-#       labels:
-#         app: nginx
-#         demo: efs-dynamic
-#     spec:
-#       containers:
-#       - name: nginx
-#         image: nginx 
-#         volumeMounts:
-#         - name: nginx-data
-#           mountPath: /usr/share/nginx/html
-#       # nodeSelector: # not required for NFS
-#       #   zone: 1d    
-#       volumes:
-#       - name: nginx-data
-#         persistentVolumeClaim:
-#           claimName: efs-dynamic # name of the persistent volume claim
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+    demo: efs-dynamic
+spec:
+  # modify replicas according to your case
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+      demo: efs-dynamic
+  template:
+    metadata:
+      labels:
+        app: nginx
+        demo: efs-dynamic
+    spec:
+      containers:
+      - name: nginx
+        image: nginx 
+        volumeMounts:
+        - name: nginx-data
+          mountPath: /usr/share/nginx/html
+      # nodeSelector: # not required for NFS
+      #   zone: 1d    
+      volumes:
+      - name: nginx-data
+        persistentVolumeClaim:
+          claimName: efs-dynamic # name of the persistent volume claim
 
 
 ---
