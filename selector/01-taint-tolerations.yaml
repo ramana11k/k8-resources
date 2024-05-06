@@ -1,0 +1,19 @@
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: taint-pod  
+spec:
+  containers:
+  - name: hello-pod
+    image: nginx
+    ports:
+    - containerPort: 80
+  
+  # tolerations:
+  # - key: "project"
+  #   operator: "exists"
+  #   effect: "NoSchedule"
+  
+ 
+  
