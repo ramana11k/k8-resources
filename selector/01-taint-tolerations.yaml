@@ -10,10 +10,10 @@ spec:
     ports:
     - containerPort: 80
   
-  # tolerations:
-  # - key: "project"
-  #   operator: "exists"
-  #   effect: "NoSchedule"
+  tolerations:
+  - key: "project"
+    operator: "exists"
+    effect: "NoSchedule"
   
  
   
