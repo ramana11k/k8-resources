@@ -12,7 +12,7 @@ spec:
   
   tolerations:
   - key: "project"
-    operator: "exists"
+    operator: "Exists"
     effect: "NoSchedule"
   
  
