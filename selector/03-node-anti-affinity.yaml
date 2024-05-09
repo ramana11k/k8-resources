@@ -14,7 +14,7 @@ spec:
             - roboshop
             
   containers:
-  - name: with-node-affinity
+  - name: node-anti-affinity-1
     image: nginx
   
 ---
@@ -35,7 +35,7 @@ spec:
             - roboshop
             
   containers:
-  - name: with-node-affinity
+  - name: node-anti-affinity-2
     image: nginx
 
 ---
@@ -55,5 +55,5 @@ spec:
             - roboshop
             
   containers:
-  - name: with-node-affinity
+  - name: node-anti-affinity-3
     image: nginx
