@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: node-anti-affinity-1
+  name: node-anti-affinity
 spec:
   affinity:
     nodeAffinity:
@@ -14,66 +14,66 @@ spec:
             - roboshop
             
   containers:
-  - name: node-anti-affinity-1
+  - name: node-anti-affinity
     image: nginx
   
----
+# ---
 
-apiVersion: v1
-kind: Pod
-metadata:
-  name: node-anti-affinity-2
-spec:
-  affinity:
-    nodeAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution:
-        nodeSelectorTerms:
-        - matchExpressions:
-          - key: project
-            operator: NotIn
-            values:
-            - roboshop
+# apiVersion: v1
+# kind: Pod
+# metadata:
+#   name: node-anti-affinity-2
+# spec:
+#   affinity:
+#     nodeAffinity:
+#       requiredDuringSchedulingIgnoredDuringExecution:
+#         nodeSelectorTerms:
+#         - matchExpressions:
+#           - key: project
+#             operator: NotIn
+#             values:
+#             - roboshop
             
-  containers:
-  - name: node-anti-affinity-2
-    image: nginx
+#   containers:
+#   - name: node-anti-affinity-2
+#     image: nginx
 
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: node-anti-affinity-3
-spec:
-  affinity:
-    nodeAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution:
-        nodeSelectorTerms:
-        - matchExpressions:
-          - key: project
-            operator: NotIn
-            values:
-            - roboshop
+# ---
+# apiVersion: v1
+# kind: Pod
+# metadata:
+#   name: node-anti-affinity-3
+# spec:
+#   affinity:
+#     nodeAffinity:
+#       requiredDuringSchedulingIgnoredDuringExecution:
+#         nodeSelectorTerms:
+#         - matchExpressions:
+#           - key: project
+#             operator: NotIn
+#             values:
+#             - roboshop
             
-  containers:
-  - name: node-anti-affinity-3
-    image: nginx
+#   containers:
+#   - name: node-anti-affinity-3
+#     image: nginx
 
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: node-anti-affinity-4
-spec:
-  affinity:
-    nodeAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution:
-        nodeSelectorTerms:
-        - matchExpressions:
-          - key: project
-            operator: NotIn
-            values:
-            - roboshop
+# ---
+# apiVersion: v1
+# kind: Pod
+# metadata:
+#   name: node-anti-affinity-4
+# spec:
+#   affinity:
+#     nodeAffinity:
+#       requiredDuringSchedulingIgnoredDuringExecution:
+#         nodeSelectorTerms:
+#         - matchExpressions:
+#           - key: project
+#             operator: NotIn
+#             values:
+#             - roboshop
             
-  containers:
-  - name: node-anti-affinity-4
-    image: nginx
+#   containers:
+#   - name: node-anti-affinity-4
+#     image: nginx
