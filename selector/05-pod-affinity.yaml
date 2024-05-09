@@ -23,7 +23,8 @@ spec:
           - key: name
             operator: In
             values:
-            - affinity-pod-1        
+            - affinity-pod-1    
+        topologyKey: topology.kubernetes.io/zone 
   containers:
   - name: with-pod-affinity
     image: nginx
