@@ -8,11 +8,11 @@ spec:
       requiredDuringSchedulingIgnoredDuringExecution:
         nodeSelectorTerms:
         - matchExpressions:
-          - key: topology.kubernetes.io/zone
+          - key: project
             operator: In
             values:
-            - antarctica-east1
-            - antarctica-west1      
+            - roboshop1
+            
   containers:
   - name: with-node-affinity
     image: nginx
